@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" style="width: 500px;height: 500px;"></div>
+</body>
+<script src="./js/echarts.min.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById("main"));
+    
+    var option = {
+        title:{
+            text:"散点图",
+            subtext:"柒专属",
+            left:0,
+            backgroundColor:'black',
+            borderRadius: [5, 5, 5, 5] ,
+            textStyle:{
+                color:'white'
+            }
+        },
+    xAxis: {},
+    yAxis: {},
+    series: [{
+        // 点 的大小
+        symbolSize: 25,
+        // 数据
+        data: [
+            [10.0, 8.04],
+            [8.0, 6.95],
+            [13.0, 7.58],
+            [9.0, 8.81],
+            [11.0, 8.33],
+            [14.0, 9.96],
+            [6.0, 7.24],
+            [4.0, 4.26],
+            [12.0, 10.84],
+            [7.0, 4.82],
+            [5.0, 5.68]
+        ],
+        // 类型
+        type: 'scatter'
+    }]
+};
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</html>

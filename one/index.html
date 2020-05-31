@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" style="width: 500px;height: 500px;"></div>
+</body>
+<script src="./js/echarts.min.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById("main"));
+    
+    var option = {
+        
+        title: {
+            text: 'ECharts图表练习',
+            subtext:'柒专属',
+            left:'left',
+            borderColor:'red',
+            borderWidth:3
+        },
+        // 工具箱
+        toolbox: {
+            show: true,
+            feature:{
+                saveAsImage:{
+                    show:true
+                },
+                restore:{
+                    show:true
+                },
+                dataView:{
+                    show:true
+                },
+                dataZoom:{
+                    show:true
+                },
+                magicType:{
+                    type:['line','bar']
+                }
+
+            }
+        },
+        tooltip:{
+            trigger:'axis'
+        },
+        // 图例
+        legend: {
+            data: ['人数']
+        },
+        // x轴
+        xAxis: {
+            data: ["一年级", "二年级", "三年级", "四年级", "五年级", "六年级"]
+        },
+        yAxis: {},
+        // 数据
+        series: [{
+            name: '人数',
+            type: 'bar',
+            data: [63, 52, 40, 77, 60, 50],
+            markPoint:{
+                data:[
+                    {type:'max',name:'最大值'},
+                    {type:'min',name:'最小值',symbol:'arrow'}
+                ]
+            },
+            markLine:{
+                data:[
+                    {type: 'average',name:'平均值'}
+                ]
+            }
+        }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</html>

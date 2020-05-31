@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="main" style="width: 500px;height: 500px;"></div>
+</body>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/china.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById("main"));
+    
+   var option={
+    geo: {
+          map: 'china'
+      },
+      title: {
+        text: '中国地图',
+        subtext: '虚构数据',
+        left: 0
+    },
+     
+   }
+   
+   myChart.setOption(option)
+</script>
+</html>
